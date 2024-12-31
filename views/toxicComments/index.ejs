@@ -1,0 +1,26 @@
+<h2>Toxic Comments</h2>
+
+<button onclick="showHide()" id="toogleButton"> Show Comments </button>
+
+<% for (toxicComment of toxicComments) { %>
+    <hr>
+    <div>
+        <p> Toxicity Score: <%= toxicComment.toxicityScore %> </p>
+        <p class="showComment" hidden> <i> <%= toxicComment.text %> </i> </p>
+        <p class="hideComment"> <i> Comment Hidden </i> </p>
+        <p> <%= toxicComment.publishedAt.toLocaleString() %></p>
+    </div>
+<% } %>
+
+<script>
+    function showHide() {
+        let comments = document.querySelectorAll('.showComment')
+        let hiddens = document.querySelectorAll('.hideComment')
+        let button = document.querySelector('#toogleButton')
+        button.textContent = (button.textContent == "Hide Comments") ? "Show Comments" : "Hide Comments"
+        comments.forEach((comment, index) => {
+            comment.hidden = !comment.hidden
+            hiddens[index].hidden = !comment.hidden
+        })
+    }
+</script>

@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-// Home page for this application
+// Login page for this application
 router.get('/', (req, res) => {
-    res.render('index')
+    res.render('login/index')
 })
 
 module.exports = router

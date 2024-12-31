@@ -1,0 +1,13 @@
+<h1>Welcome <%= displayName %> </h1>
+<h2>Dashboard</h2>
+
+<% for (video of videos) {  %>
+    <hr>
+    <div>
+        <a href='https://www.youtube.com/watch?v=<%= video.id %>' target="_blank"><b><%= video.title %></b></a>
+        <p><%= video.publishedAt.toLocaleString() %></p>
+        <a href="/toxicComments?videoID=<%= video.id %>">View Deleted Comments</a>
+        <br>
+    </div>
+<% } %>
+<hr>
